@@ -101,48 +101,125 @@ Air pollution is one of the major environmental concerns globally. This project 
 
 ## 📁 File Structure
 
-```
 AQI-Data-Visualization/
 │
-├── data/                          # Data directory
-│   ├── raw/                       # Raw, unprocessed data files
-│   │   ├── city_aqi_data.csv
-│   │   └── pollutant_data.csv
-│   ├── processed/                 # Cleaned and processed data
-│   │   └── cleaned_aqi_data.csv
-│   └── README.md                  # Data documentation
+├── .github/                          # GitHub specific files
+│   ├── workflows/                    # CI/CD workflows
+│   │   ├── tests.yml                # Automated testing
+│   │   └── deploy.yml               # Deployment workflow
+│   ├── ISSUE_TEMPLATE/              # Issue templates
+│   └── PULL_REQUEST_TEMPLATE.md     # PR template
 │
-├── notebooks/                     # Jupyter notebooks
+├── data/                             # Data directory
+│   ├── raw/                          # Raw, unprocessed data files
+│   │   ├── city_aqi_data.csv
+│   │   ├── pollutant_data.csv
+│   │   └── station_metadata.json
+│   ├── processed/                    # Cleaned and processed data
+│   │   ├── cleaned_aqi_data.csv
+│   │   ├── aggregated_monthly.csv
+│   │   └── city_statistics.json
+│   ├── external/                     # External data sources
+│   │   └── meteorological_data.csv
+│   └── README.md                     # Data documentation
+│
+├── notebooks/                        # Jupyter notebooks
 │   ├── 01_data_exploration.ipynb
 │   ├── 02_data_cleaning.ipynb
 │   ├── 03_visualization.ipynb
-│   └── 04_analysis.ipynb
+│   ├── 04_statistical_analysis.ipynb
+│   ├── 05_predictive_modeling.ipynb
+│   └── README.md                     # Notebook descriptions
 │
-├── src/                          # Source code
+├── src/                              # Source code
 │   ├── __init__.py
-│   ├── data_loader.py           # Data loading utilities
-│   ├── data_processor.py        # Data processing functions
-│   ├── visualizer.py            # Visualization functions
-│   └── utils.py                 # Utility functions
+│   ├── data/                         # Data handling modules
+│   │   ├── __init__.py
+│   │   ├── loader.py                # Data loading utilities
+│   │   ├── processor.py             # Data processing functions
+│   │   ├── validator.py             # Data validation
+│   │   └── api_client.py            # API data fetching
+│   ├── visualization/                # Visualization modules
+│   │   ├── __init__.py
+│   │   ├── plotters.py              # Basic plotting functions
+│   │   ├── interactive.py           # Interactive visualizations
+│   │   ├── maps.py                  # Geographic visualizations
+│   │   └── themes.py                # Styling and themes
+│   ├── analysis/                     # Analysis modules
+│   │   ├── __init__.py
+│   │   ├── statistics.py            # Statistical analysis
+│   │   ├── trends.py                # Trend analysis
+│   │   └── forecasting.py           # Predictive models
+│   ├── utils/                        # Utility modules
+│   │   ├── __init__.py
+│   │   ├── helpers.py               # Helper functions
+│   │   ├── config.py                # Configuration management
+│   │   └── constants.py             # Project constants
+│   └── dashboard/                    # Dashboard application
+│       ├── __init__.py
+│       ├── app.py                   # Main dashboard app
+│       ├── components.py            # Dashboard components
+│       └── callbacks.py             # Interactive callbacks
 │
-├── outputs/                      # Generated outputs
-│   ├── figures/                 # Saved visualizations
-│   │   ├── aqi_trends.png
-│   │   ├── pollutant_comparison.png
-│   │   └── city_heatmap.png
-│   └── reports/                 # Analysis reports
-│       └── summary_report.pdf
-│
-├── tests/                        # Unit tests
+├── tests/                            # Unit tests
+│   ├── __init__.py
 │   ├── test_data_loader.py
-│   └── test_visualizer.py
+│   ├── test_data_processor.py
+│   ├── test_visualizer.py
+│   ├── test_analysis.py
+│   └── conftest.py                  # Pytest configuration
 │
-├── requirements.txt              # Project dependencies
-├── environment.yml              # Conda environment file
-├── .gitignore                   # Git ignore file
-├── LICENSE                      # License file
-└── README.md                    # This file
-```
+├── outputs/                          # Generated outputs
+│   ├── figures/                      # Saved visualizations
+│   │   ├── trends/
+│   │   ├── comparisons/
+│   │   └── maps/
+│   ├── reports/                      # Analysis reports
+│   │   ├── monthly/
+│   │   └── annual/
+│   └── exports/                      # Exported data
+│       └── processed_data.csv
+│
+├── docs/                             # Documentation
+│   ├── index.md                      # Documentation home
+│   ├── installation.md               # Installation guide
+│   ├── usage.md                      # Usage examples
+│   ├── api_reference.md              # API documentation
+│   ├── data_sources.md               # Data source details
+│   └── contributing.md               # Contribution guidelines
+│
+├── config/                           # Configuration files
+│   ├── config.yaml                   # Main configuration
+│   ├── logging.yaml                  # Logging configuration
+│   └── api_keys.example.yaml         # Example API keys file
+│
+├── scripts/                          # Utility scripts
+│   ├── fetch_data.py                 # Data fetching script
+│   ├── clean_data.py                 # Data cleaning script
+│   ├── generate_report.py            # Report generation
+│   └── setup_database.py             # Database setup
+│
+├── docker/                           # Docker configuration
+│   ├── Dockerfile
+│   └── docker-compose.yml
+│
+├── .env.example                      # Example environment variables
+├── .gitignore                        # Git ignore file
+├── .gitattributes                    # Git attributes
+├── .dockerignore                     # Docker ignore file
+├── .pre-commit-config.yaml           # Pre-commit hooks
+│
+├── requirements.txt                  # Production dependencies
+├── requirements-dev.txt              # Development dependencies
+├── environment.yml                   # Conda environment file
+├── setup.py                          # Package setup file
+├── pyproject.toml                    # Modern Python project config
+│
+├── LICENSE                           # License file
+├── README.md                         # Main README
+├── CHANGELOG.md                      # Version history
+├── CONTRIBUTING.md                   # Contribution guidelines
+└── CODE_OF_CONDUCT.md                # Code of conduct
 
 ### 📄 Key Files Description
 
