@@ -10,7 +10,7 @@
 
 **A comprehensive data visualization project for analyzing and monitoring Air Quality Index (AQI) across different regions**
 
-[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Documentation](#-documentation) • [Contributing](#-contributing)
+[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Contributing](#-contributing)
 
 </div>
 
